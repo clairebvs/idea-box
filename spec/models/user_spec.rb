@@ -9,7 +9,7 @@ describe User, type: :model do
     it {should validate_presence_of(:role)}
   end
 
-  describe 'realtionships' do
+  describe 'Relationships' do
     it {should have_many(:ideas)}
   end
 end
