@@ -1,0 +1,3 @@
+class IdeaImage < ApplicationRecord
+
+end 
