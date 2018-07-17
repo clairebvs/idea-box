@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show]
 
   namespace :admin do
-    resources :categories, only: [:new, :create]
-  end 
+    resources :categories, only: [:index, :new, :create]
+  end
 
   resources :users do
     resources :ideas
