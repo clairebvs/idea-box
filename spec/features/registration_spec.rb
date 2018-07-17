@@ -9,7 +9,6 @@ describe 'registration workflow' do
     click_on 'Sign Up to be a New User'
 
     expect(current_path).to eq(new_user_path)
-
     fill_in :user_username, with: username
     fill_in :user_password, with: '12345'
     fill_in :user_email, with: 'ben@yahoo.com'
