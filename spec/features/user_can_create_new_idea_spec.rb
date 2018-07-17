@@ -1,12 +1,12 @@
 require 'rails_helper'
 
 describe 'user can create a new idea' do
-  it 'can click on create a new idea on their index user idea page' do
-
-
-
-  end
-
+  # it 'can click on create a new idea on their index user idea page' do
+  #
+  #
+  #
+  # end
+  #
 
   it 'by filling out a form' do
     user = User.create(username: "Elena", password: "12343", email: 'John@yahoo.com', country: 'USA', role: 1)
