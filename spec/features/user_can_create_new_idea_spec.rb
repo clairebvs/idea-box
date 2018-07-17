@@ -10,9 +10,11 @@ describe 'user can create a new idea' do
 
     fill_in :idea_title, with: idea.title
     fill_in :idea_description, with: idea.description
+    select "#{category.name}", from: 'idea[category_id]'
 
     click_on 'Create Idea'
 
+    expect(current_path).to eq(user_ideas_path(user))
     expect(page).to have_content(idea.title)
     expect(page).to have_content(idea.description)
   end
