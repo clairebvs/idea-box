@@ -12,6 +12,8 @@ describe 'registration workflow' do
 
     fill_in :user_username, with: username
     fill_in :user_password, with: '12345'
+    fill_in :user_email, with: 'ben@yahoo.com'
+    fill_in :user_country, with: 'USA'
 
     click_on 'Create User'
 
