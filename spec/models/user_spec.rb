@@ -13,4 +13,13 @@ describe User, type: :model do
   describe 'Relationships' do
     it {should have_many(:ideas)}
   end
+
+  describe 'role' do
+    it 'can be created as an admin' do
+      user = User.create(username: "Yael", password: '123', email: "yael@yahoo.com", country: 'USA', role: 1)
+
+      expect(user.role).to eq("admin")
+      expect(user.admin?).to be_truthy
+    end
+  end
 end
