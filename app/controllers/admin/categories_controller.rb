@@ -1,5 +1,8 @@
 class Admin::CategoriesController < ApplicationController
 
+  def index
+  end 
+
   def new
     @category = Category.new
   end
@@ -16,5 +19,5 @@ class Admin::CategoriesController < ApplicationController
   private
     def category_params
       params.require(:category).permit(:name)
-    end 
+    end
 end
