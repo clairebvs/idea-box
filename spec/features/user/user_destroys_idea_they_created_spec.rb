@@ -11,9 +11,10 @@ describe 'user can visit their show page idea' do
 
     visit user_idea_path(user, idea)
 
-    click_link ('Delete')
+    click_button ('Delete')
 
-    expect(current_path).to eq(user_ideas_path(user, ideas))
+    expect(current_path).to eq(user_ideas_path(user))
+
     expect(page).to_not have_content(idea.title)
     expect(page).to_not have_content(idea.description)
     expect(page).to have_content(idea2.title)
