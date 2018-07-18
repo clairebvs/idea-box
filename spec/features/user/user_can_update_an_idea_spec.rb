@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'user can update an idea' do
+describe 'user can update their idea' do
   it 'by clicking on edit and submit a form' do
     user = User.create(username: "Elena", password: "12343", email: 'John@yahoo.com', country: 'USA', role: 0)
     category = Category.create(name: "World", created_at: 2017-02-10, updated_at: 2017-10-12)
@@ -11,7 +11,6 @@ describe 'user can update an idea' do
     visit user_idea_path(user, idea)
 
     click_link('Edit')
-    # save_and_open_page
 
     select 'World', from: 'Category'
     fill_in 'idea[title]', with: 'Travel today'
