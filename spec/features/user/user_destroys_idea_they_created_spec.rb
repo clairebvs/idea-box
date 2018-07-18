@@ -19,7 +19,5 @@ describe 'user can visit their show page idea' do
     expect(page).to_not have_content(idea.description)
     expect(page).to have_content(idea2.title)
     expect(page).to have_content(idea2.description)
-
-
   end
 end
