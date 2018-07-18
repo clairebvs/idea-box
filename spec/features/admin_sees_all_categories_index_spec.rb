@@ -13,7 +13,7 @@ describe 'User visits categories index page' do
 
     context 'as a default user' do
       it 'does not allow default user to see admin categories' do
-        user = User.create(username: 'Eli', password: 'password', email: 'eli@yahoo.com', country: 'Australia', role: 1)
+        user = User.create(username: 'Eli', password: 'password', email: 'eli@yahoo.com', country: 'Australia', role: 0)
 
         allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
