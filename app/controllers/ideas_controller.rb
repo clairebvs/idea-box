@@ -24,9 +24,25 @@ class IdeasController < ApplicationController
     end
   end
 
+  def edit
+    @user = User.find(params[:user_id])
+    @idea = @user.idea
+  end
+
+  def update
+    @user = User.find(params[:user_id])
+    # @idea = @user.idea.update(idea_params)
+    @idea.update(idea_params)
+    if @idea.save
+      redirect_to user_idea_path(@idea)
+    else
+      render :edit
+    end
+  end
+
   private
 
   def idea_params
-    params.require(:idea).permit(:title, :description, :category_id)
+    params.require(:idea).permit(:title, :description, :category_id, :id)
   end
 end
