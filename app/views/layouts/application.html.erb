@@ -9,6 +9,9 @@
   </head>
 
     <body>
+      <% if current_admin? %>
+        <%= link_to 'Categories', admin_categories_path %>
+      <% end %>
       <%= yield %>
   </body>
 </html>
