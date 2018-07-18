@@ -11,7 +11,8 @@ class Admin::CategoriesController < Admin::BaseController
 
   def create
     @category = Category.new(category_params)
-    if @category.save
+    if current_admin?
+      @category.save
       redirect_to admin_categories_path
     else
       render :new

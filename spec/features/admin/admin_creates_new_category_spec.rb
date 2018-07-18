@@ -13,7 +13,7 @@ describe 'User visits categories index page' do
       fill_in :category_name, with: 'Finance'
       click_on 'Create Category'
 
-      expect(current_path).to eq(admin_categories)
+      expect(current_path).to eq(admin_categories_path)
       expect(page).to have_content(category.name)
     end
   end
