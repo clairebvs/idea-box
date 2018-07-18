@@ -26,15 +26,14 @@ class IdeasController < ApplicationController
 
   def edit
     @user = User.find(params[:user_id])
-    @idea = @user.idea
+    @categories = Category.all
   end
 
   def update
-    @user = User.find(params[:user_id])
-    # @idea = @user.idea.update(idea_params)
+    @idea = Idea.find(params[:id])
     @idea.update(idea_params)
     if @idea.save
-      redirect_to user_idea_path(@idea)
+      redirect_to user_idea_path(@idea.user)
     else
       render :edit
     end
