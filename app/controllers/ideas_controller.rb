@@ -7,6 +7,7 @@ class IdeasController < ApplicationController
 
   def show
     @user = User.find(params[:user_id])
+    @idea = @user.ideas.find(params[:id])
   end
 
   def new
@@ -25,15 +26,17 @@ class IdeasController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:user_id])
+    # require "pry"; binding.pry
     @categories = Category.all
+    @idea = Idea.find(params[:id])
   end
 
   def update
-    @idea = Idea.find(params[:id])
+    @user = User.find(params[:user_id])
+    @idea = @user.ideas.find(params[:id])
     @idea.update(idea_params)
     if @idea.save
-      redirect_to user_idea_path(@idea.user)
+      redirect_to user_idea_path(@idea.user, @idea)
     else
       render :edit
     end
