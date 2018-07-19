@@ -1,4 +1,6 @@
 
 <h4> Welcome, <%= current_user.username %>!</h4>
 <br>
-<%= link_to 'Your ideas', user_ideas_path(@user) %>
+<div class='show'>
+  <%= link_to 'Your ideas', user_ideas_path(@user) %>
+</div>
