@@ -1,5 +1,9 @@
 <%= @idea.title %><br>
 <%= @idea.description %><br>
+<% @idea.images.each do |image| %>
+  <%= image.name %><br>
+<% end %>
+
 <%= link_to "Edit", edit_user_idea_path(@user, @idea) %>
 <br>
 <%= button_to 'Delete', user_idea_path(@user, @idea), method: :delete %> <br>
