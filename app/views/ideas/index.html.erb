@@ -1,6 +1,14 @@
-<% @user.ideas.each do |idea| %>
-  Title : <%= link_to "#{idea.title}", user_idea_path(@user, idea) %> <br>
-  Description : <%= idea.description %><br>
-<% end %>
+<h1> Ideas </h1>
 
-<h4><%= link_to 'Create a New Idea', new_user_idea_path(@user) %></h4>
+<div class="create">
+  <%= link_to 'Create a New Idea', new_user_idea_path(@user) %><br>
+</div>
+
+<div class='cat'>
+  <% @user.ideas.each do |idea| %>
+  <div id="list">
+    <p>Title : <%= link_to "#{idea.title}", user_idea_path(@user, idea) %></p> <br>
+    <p>Description : <%= idea.description %></p><br>
+  </div>
+  <% end %>
+</div>

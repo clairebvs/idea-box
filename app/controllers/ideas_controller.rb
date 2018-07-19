@@ -14,11 +14,13 @@ class IdeasController < ApplicationController
   def new
     @user = User.find(params[:user_id])
     @idea = Idea.new
+    @images = Image.all
   end
 
   def create
     @user = User.find(params[:user_id])
     @idea = @user.ideas.create(idea_params)
+    IdeaImage.create(idea_id: @idea.id, image_id: params[:image_ids].first)
     if current_user
       @idea.save
       redirect_to user_ideas_path(@user)
@@ -46,7 +48,6 @@ class IdeasController < ApplicationController
   def destroy
     @user = User.find(params[:user_id])
     Idea.destroy(params[:id])
-    # require "pry"; binding.pry
 
     redirect_to user_ideas_path(@user)
   end

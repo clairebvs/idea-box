@@ -1,6 +1,15 @@
 <h1> Admin Categories </h1>
 
+<div class="create">
+  <%= link_to 'Create New Category', new_admin_category_path %> <br>
+</div>
+
+<div class='cat'>
 <% @categories.each do |category| %>
-  <%= category.name %>
-  <%= link_to "Delete", admin_category_path(category), method: "delete" %>
+  <div id="list">
+      <p><%= category.name %></p>
+      <p><%= link_to "Delete", admin_category_path(category), method: "delete" %></p>
+  </div>
 <% end %>
+</div>
+<br><br>
