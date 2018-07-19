@@ -18,7 +18,6 @@ class IdeasController < ApplicationController
   end
 
   def create
-    # require "pry"; binding.pry
     @user = User.find(params[:user_id])
     @idea = @user.ideas.create(idea_params)
     IdeaImage.create(idea_id: @idea.id, image_id: params[:image_ids].first)

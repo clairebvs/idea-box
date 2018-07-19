@@ -14,7 +14,7 @@ describe 'user can create a new idea' do
     fill_in :idea_title, with: idea.title
     fill_in :idea_description, with: idea.description
     select "#{category.name}", from: 'idea[category_id]'
-    select "#{image.name}", from: 'image[id]'
+    select "#{image.name}", from: 'image_ids'
 
     click_on 'Create Idea'
 
