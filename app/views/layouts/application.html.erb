@@ -9,8 +9,15 @@
   </head>
 
     <body>
+      <h1>Idea Box</h1>
+        <ul>
+          <li><%= link_to 'Welcome', root_path %></li>
+
+          <li><%= link_to 'Log Out', logout_path %></li>
+        <ul>
       <% if current_admin? %>
         <%= link_to 'Categories', admin_categories_path %>
+        <%= link_to 'Images', admin_images_path %>
       <% end %>
       <%= yield %>
   </body>
