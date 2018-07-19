@@ -11,9 +11,9 @@
     <body>
       <h1>Idea Box</h1>
         <ul>
-          <li><%= link_to 'Welcome', root_path %></li>
+          <p><%= link_to 'Welcome', root_path %></p>
 
-          <li><%= link_to 'Log Out', logout_path %></li>
+          <p><%= link_to 'Log Out', logout_path %></p>
         <ul>
       <% if current_admin? %>
         <%= link_to 'Categories', admin_categories_path %>

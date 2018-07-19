@@ -2,7 +2,8 @@
 
 <% @images.each do |image| %>
   <%= image.name %>
-  <%= image.url %>
+  <%= link_to 'image.url' %>
+
 <% end %>
 <br><br>
 <%= link_to 'Create an Image', new_admin_image_path %>
