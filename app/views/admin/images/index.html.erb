@@ -1,9 +1,14 @@
 <h1> Admin Images </h1>
 
-<% @images.each do |image| %>
-  <%= image.name %>
-  <%= link_to 'image.url' %>
+<div class="create">
+  <%= link_to 'Create an Image', new_admin_image_path %> <br>
+</div>
 
+<div class='cat'>
+<% @images.each do |image| %>
+  <div id="list">
+    <p><%= image.name %></p>
+    <p><%= link_to 'image.url' %></p>
+  </div>
 <% end %>
 <br><br>
-<%= link_to 'Create an Image', new_admin_image_path %>
